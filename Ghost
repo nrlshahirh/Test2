@@ -1,0 +1,46 @@
+package test;
+
+public class Ghost extends GameCharacter {
+	
+	private int shootdis;
+	private Boolean shoot;
+	Time time = new Time();
+	Level level = new Level();
+	
+	public void setShoot(int shootdis) {
+		
+	}
+	
+	public int getShoot(){
+		return 0;
+	}
+	
+	public void checkShoot() {
+		
+	}
+	
+	public void turnLeft() {
+		
+	}
+	
+	public void turnRight() {
+		
+	}
+	
+	public void countDown() {
+		
+	}
+	
+	public void vulnarableTime(){
+		
+	}
+	
+	public void die() {
+		
+	}
+	
+	public void respawn() {
+		
+	}
+	
+}
