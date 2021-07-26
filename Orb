@@ -1,0 +1,17 @@
+package test;
+
+public class Orb {
+	public int xposition;
+	public int yposition;
+	public String colour;
+	public int score;
+	public Boolean finish;
+	
+	public void setPosition() {
+		
+	}
+	
+	public Boolean isFinished() {
+		return true;
+	}
+}
