@@ -1,0 +1,14 @@
+package test;
+
+public class Picman extends Pacman{
+	
+	private String shape;
+	
+	public void setShape(String shape) {
+		
+	}
+	
+	public String getShape() {
+		return null;
+	}
+}
