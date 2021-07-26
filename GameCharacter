@@ -1,0 +1,16 @@
+package test;
+
+public class GameCharacter {
+	
+	protected String colour;
+	protected int xposition;
+	protected int yposition;
+	
+	public String changeColour() {
+		return null;
+	}
+	
+	public int ChangePosition() {
+		return 0;
+	}
+}
