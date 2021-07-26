@@ -1,0 +1,23 @@
+package test;
+
+public class Bonus extends Orb {
+	
+	private String type;
+	Time time = new Time();
+	
+	public Bonus(String type) {
+		this.type = type;
+	}
+	
+	public String bonusType() {
+		return null;
+	}
+	
+	public int Score() {
+		return 0;
+	}
+	
+	public void countdown() {
+		
+	}
+}
