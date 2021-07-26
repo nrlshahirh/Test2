@@ -1,0 +1,167 @@
+package test;
+	
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCombination;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
+import javafx.scene.shape.Polygon;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+//* things that important
+
+//related to java fx application
+public class Main extends Application { //all data from Application class is in main
+
+	public void start(Stage stage) {
+		
+			BorderPane root = new BorderPane();	//have all the components that we need *
+			
+			Scene scene = new Scene(root,500,400,Color.BLACK);	//scene should contain the ^ * 
+			//height,width,color
+			
+			Line line = new Line();	//create line
+			line.setStartY(20);
+			line.setEndY(20);
+			line.setStartX(0);
+			line.setEndX(600);
+			line.setStroke(Color.SILVER); //set line colour
+			line.setStrokeWidth(3);	//set width
+			line.setOpacity(0.5);	//opacity
+			root.getChildren().add(line);	
+			
+			Line line2 = new Line();	//create line
+			line2.setStartY(380);
+			line2.setEndY(380);
+			line2.setStartX(0);
+			line2.setEndX(600);
+			line2.setStroke(Color.SILVER); //set line colour
+			line2.setStrokeWidth(3);	//set width
+			line2.setOpacity(0.5);	//opacity
+			root.getChildren().add(line2);	
+			
+			
+			Rectangle rectangle = new Rectangle();	//create rectangle
+			rectangle.setX(250);
+			rectangle.setY(70);
+			rectangle.setWidth(30);
+			rectangle.setHeight(100);
+			rectangle.setStrokeWidth(3);	//width line
+			rectangle.setStroke(Color.GOLD);	//line colour
+			root.getChildren().add(rectangle);
+			
+			
+
+			Rectangle rectangle1 = new Rectangle();	//create rectangle
+			rectangle1.setX(100);
+			rectangle1.setY(70);
+			rectangle1.setWidth(30);
+			rectangle1.setHeight(100);
+			rectangle1.setStrokeWidth(3);	//width line
+			rectangle1.setStroke(Color.GOLD);	//line colour
+			root.getChildren().add(rectangle1);
+			
+			Rectangle rectangle2 = new Rectangle();	//create rectangle
+			rectangle2.setX(50);
+			rectangle2.setY(300);
+			rectangle2.setWidth(400);
+			rectangle2.setHeight(30);
+			rectangle2.setStrokeWidth(3);	//width line
+			rectangle2.setStroke(Color.GOLD);	//line colour
+			root.getChildren().add(rectangle2);
+			
+
+			Rectangle rectangle3 = new Rectangle();	//create rectangle
+			rectangle3.setX(400);
+			rectangle3.setY(70);
+			rectangle3.setWidth(30);
+			rectangle3.setHeight(100);
+			rectangle3.setStrokeWidth(3);	//width line
+			rectangle3.setStroke(Color.GOLD);	//line colour
+			root.getChildren().add(rectangle3);
+			
+			Image image = new Image("pacman2.png");	//add image in the scene
+			ImageView imageview = new ImageView(image);
+			imageview.setX(80);
+			imageview.setY(250);
+			imageview.setFitHeight(50);
+			imageview.setFitWidth(60);
+			root.getChildren().add(imageview);  
+			
+			Image image2 = new Image("ghost.png");	//add image in the scene
+			ImageView imageview2 = new ImageView(image2);
+			imageview2.setX(200);
+			imageview2.setY(250);
+			imageview2.setFitHeight(50);
+			imageview2.setFitWidth(60);
+			root.getChildren().add(imageview2);  
+			
+			Image image3 = new Image("ghist2.png");	//add image in the scene
+			ImageView imageview3 = new ImageView(image3);
+			imageview3.setX(250);
+			imageview3.setY(20);
+			imageview3.setFitHeight(40);
+			imageview3.setFitWidth(50);
+			root.getChildren().add(imageview3);  
+			
+		//	stage.setWidth(420);
+		//	stage.setHeight(420);
+			
+			stage.setResizable(false); //cannot adjust the size
+			
+		//	stage.setFullScreen(true); //can full screen
+		//	stage.setFullScreenExitHint("You can't escape unless you press esc button"); //exit hint
+		//	stage.setFullScreenExitKeyCombination(KeyCombination.valueOf("esc")); //press q tu exit
+			
+			stage.setTitle("PacMan Version-2"); //title
+			
+		//	Image image = new Image("Kitty.png.jpg");	//add image to stage (tab) *
+		//	stage.getIcons().add(image); 
+			
+			stage.setScene(scene);	//add to the stage (scene has components) *
+			
+			stage.show();	//show the stage - we need stage first *
+			
+	}
+	
+	public static void main(String[] args) {	//related to java application
+		launch(args); //run java fx (method from Application)
+		
+		GameCharacter game = new GameCharacter(); //GameCharacter class
+		
+		Pacman p = new Pacman(); //Pacman class
+		
+		Picman pic = new Picman();//Picman class
+		
+		Orb orb = new Orb(); //Orb class
+		
+		Ghost ghost = new Ghost(); //Ghost class
+		
+		Bonus bonus = new Bonus("Strawberry"); //Bonus class
+		
+		PacmanList list= new PacmanList(2); //PacmanList class
+		list.addPacman(Pacman p);
+		list.getnumplayer();
+		
+		Bomb b = new Bomb(20,30,20); //Bomb class
+		b.getRange();
+		b.getPosition();
+		
+		ListGhost listg =new ListGhost(4); //ListGhost class
+		listg.addGhost(Ghost ghost);
+		listg.getNumghost();
+		
+		Level level = new Level(); //Level class
+		level.increaseSpeed();
+		level.increaseLevel();
+		
+		Time time = new Time(3.1);
+		time.getTime();
+	}
+}
